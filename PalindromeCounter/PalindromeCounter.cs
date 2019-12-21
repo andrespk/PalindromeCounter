@@ -15,7 +15,7 @@ namespace WestPoint.PalindromeCounter
             var currentWordLength = minLength;
             for (var i = 0; i < wordCount; i++)
             {
-                new Random().Next(minLength, maxLength);
+                currentWordLength = new Random().Next(minLength, maxLength);
                 list.Add(word.GenerateRandom(currentWordLength));
             }
             return list.ToArray();
