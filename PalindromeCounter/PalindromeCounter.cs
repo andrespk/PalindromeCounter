@@ -9,14 +9,14 @@ namespace WestPoint.PalindromeCounter
     {
         private readonly Word word = new Word();
 
-        public string[] GenerateRandomWordList(int wordCount, int wordLength, int wordSecondLengh)
+        public string[] GenerateRandomWordList(int wordCount, int minLength, int maxLength)
         {
             var list = new List<string>();
-            var currentWordLength = wordLength;
+            var currentWordLength = minLength;
             for (var i = 0; i < wordCount; i++)
             {
+                new Random().Next(minLength, maxLength);
                 list.Add(word.GenerateRandom(currentWordLength));
-                currentWordLength = currentWordLength == wordLength ? wordSecondLengh : wordLength;
             }
             return list.ToArray();
         }
